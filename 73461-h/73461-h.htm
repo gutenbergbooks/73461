@@ -1,0 +1,2256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>
+      Perseus, or Of Dragons | Project Gutenberg
+    </title>
+
+    <link rel="icon" href="images/cover.jpg" type="image/x-cover">
+
+    <style>
+
+/* DACSoft styles */
+
+body {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* General headers */
+h1 {
+    text-align: center; /* all headings centered */
+    clear: both;
+}
+
+/* Chapter headers */
+h2 {
+    text-align: center;
+    font-weight: bold;
+    margin: .75em 0;
+}
+
+div.chapter {
+    page-break-before: always;
+}
+
+.nobreak {
+    page-break-before: avoid;
+}
+
+/* Indented paragraph */
+p {
+    margin-top: .51em;
+    margin-bottom: .49em;
+    text-align: justify;
+    text-indent: 1em;
+}
+
+/* Unindented paragraph */
+.noi {text-indent: 0em;}
+
+/* Centered unindented paragraph */
+.noic {
+    text-indent: 0em;
+    text-align: center;
+}
+
+/* Non-standard paragraph margins */
+.p2 {margin-top: 2em;}
+
+.p6 {margin-top: 6em;}
+
+.pad2 {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+/* Horizontal rules */
+hr {
+    width: 33%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 33.5%;
+    margin-right: 33.5%;
+    clear: both;
+}
+
+hr.tb {
+    width: 35%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 32.5%;
+    margin-right: 32.5%;
+}
+
+hr.chap {
+    width: 65%;
+    margin-left: 17.5%;
+    margin-right: 17.5%;
+}
+
+@media print {
+    hr.chap {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+hr.r30 {
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* Lists */
+ul {list-style-type: none;}
+
+li {
+    margin-top: 1em;
+    text-indent: 0em;
+    padding-left: 0em;
+}
+
+/* Tables */
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    padding: .25em;
+}
+
+th {
+    padding: .25em;
+    font-weight: normal;
+}
+
+/* Table cell alignments */
+.tdl {
+    text-align: left;
+}
+
+.tdrb {
+    text-align: right;
+    vertical-align: bottom;
+}
+
+.tdrt {
+    text-align: right;
+    vertical-align: top;
+}
+
+/* Physical book page and line numbers */
+.pagenum { /* uncomment the next line for invisible page numbers */
+    /*  visibility: hidden;  */
+    position: absolute;
+    right: 3%;
+/*    left: 92%;  */
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-align: right;
+    color: gray;
+} /* page numbers */
+
+/* Blockquotes */
+.blockquot {
+    margin-top: 1em;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 1em;
+}
+
+/* Alignment */
+.right    {text-align: right;}
+
+/* Text appearance */
+.smcap    {font-variant: small-caps;}
+
+/* Small fonts and lowercase small-caps */
+.smfont {
+    font-size: .8em;
+}
+
+.tinyfont {
+    font-size: .6em;
+}
+
+/* Illustration caption */
+.caption  {
+    font-size: .75em;
+    font-weight: bold;
+}
+
+/* Images */
+img {
+    max-width: 100%; /* no image to be wider than screen or containing div */
+    height:auto;     /* keep height in proportion to width */
+}
+
+.illowe6 {width: 6em;}
+
+.figcenter   {
+    margin: auto;
+    text-align: center;
+    page-break-inside: avoid;
+    max-width: 90%; /* div no wider than screen, even when screen is narrow */
+}
+
+/* Poetry */
+.poetry-container {text-align: center;}   /* to keep poem centered on page */
+
+.poetry {
+    display: inline-block;
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* then large inline blocks don't split well on paged devices */
+@media print {
+    .poetry {display: block;}
+}
+
+.x-ebookmaker .poetry {display: block;}
+
+.poetry .stanza {margin: 1em auto;}
+
+.poetry .verse {
+    padding-left: 3em;
+    text-indent: -3em;
+}
+
+/* Poetry indents */
+.poetry .indent0 {padding-left: 3em;}
+.poetry .indent2 {padding-left: 4em;}
+
+/* Transcriber's notes */
+.tnote {
+    background-color: #E6E6FA;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0.5em;
+}
+
+.tntitle {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: center;
+    clear: both;
+}
+
+/* Title page borders and content. */
+.title {
+    font-size: 1.75em;
+    font-weight: bold;
+    text-align: center;
+    clear: both;
+}
+
+.halftitle {
+    font-size: 1.5em;
+    text-align: center;
+    clear: both;
+}
+
+.tinytitle {
+    font-weight: bold;
+    text-align: center;
+    clear: both;
+}
+
+.author {
+    font-size: 1.25em;
+    text-align: center;
+    clear: both;
+}
+
+/* Advertisement formatting. */
+.adauthor {
+    font-size: 1.25em;
+    text-align: center;
+    clear: both;
+}
+
+/* Hanging indent. */
+.hang {
+    text-indent: -2em;
+    padding-left: 3em;
+}
+
+    </style>
+</head>
+
+<body>
+
+
+<figure class="figcenter" id="cover_sm">
+  <img src="images/cover_sm.jpg" alt="cover" title="cover">
+  <figcaption class="caption">
+    <p class="noic">Transcriber’s Note: New original cover art included with this eBook is granted to the public domain.</p>
+  </figcaption>
+</figure>
+
+
+
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<p class="noi halftitle">PERSEUS</p>
+</div>
+
+
+
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<p class="noi adauthor" id="SERIES">TO-DAY AND TO-MORROW SERIES</p>
+</div>
+
+<hr class="r30">
+
+
+<ul>
+<li class="noi hang"><i>DÆDALUS, or Science and the Future</i><br>
+By J. B. S. Haldane</li>
+
+<li class="noi hang"><i>ICARUS, or The Future of Science</i><br>
+By the Hon. Bertrand Russell, F.R.S.</li>
+
+<li class="noi hang"><i>THE MONGOL IN OUR MIDST</i><br>
+By F. G. Crookshank, M.D. <i>Fully Illustrated</i></li>
+
+<li class="noi hang"><i>WIRELESS POSSIBILITIES</i><br>
+By Prof. A. M. Low. <i>With four Diagrams</i></li>
+
+<li class="noi hang"><i>NARCISSUS, An Anatomy of Clothes</i><br>
+By Gerald Heard. <i>Illustrated</i></li>
+
+<li class="noi hang"><i>TANTALUS, or The Future of Man</i><br>
+By F. C. S. Schiller</li>
+
+<li class="noi hang"><i>THE PASSING OF THE PHANTOMS</i><br>
+By Prof. C. J. Patten, M.A., M.D., Sc.D., F.R.A.I.</li>
+
+<li class="noi hang"><i>CALLINICUS, A Defence of Chemical Warfare</i><br>
+By J. B. S. Haldane</li>
+
+<li class="noi hang"><i>QUO VADIMUS? Some Glimpses of the Future</i><br>
+By E. E. Fournier d’Albe, D.Sc., F.Inst.P.</li>
+
+<li class="noi hang"><i>THE CONQUEST OF CANCER</i><br>
+By H. W. S. Wright, M.S., F.R.C.S.</li>
+
+<li class="noi hang"><i>HYPATIA, or Woman and Knowledge</i><br>
+By Dora Russell (The Hon. Mrs. Bertrand Russell)</li>
+
+<li class="noi hang"><i>LYSISTRATA, or Woman’s Future and Future Woman</i><br>
+By A. M. Ludovici</li>
+
+<li class="noi hang"><i>WHAT I BELIEVE</i><br>
+By the Hon. Bertrand Russell, F.R.S.</li>
+
+<li class="noi hang"><i>PERSEUS, or Of Dragons</i><br>
+By H. F. Scott Stokes, M.A.</li>
+
+<li class="noi hang"><i>THE FUTURE OF SEX</i><br>
+By Rebecca West</li>
+
+<li class="noi hang"><i>THE EVOCATION OF GENIUS</i><br>
+By Alan Porter</li>
+
+<li class="noi hang"><i>AESCULAPIUS, or Disease and The Man</i><br>
+By F. G. Crookshank, M.D.</li>
+
+<li class="noi hang"><i>PROTEUS, or The Future of Intelligence</i><br>
+By Vernon Lee</li>
+</ul>
+
+<p class="noic"><i>Other Volumes in Preparation</i></p>
+
+<hr class="r30">
+
+<p class="noi adauthor">E. P. DUTTON &amp; COMPANY</p>
+
+
+
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<h1 class="nobreak">PERSEUS<br>
+<span class="tinyfont">OR</span><br>
+<span class="smfont">OF DRAGONS</span></h1>
+
+<p class="p2 noic">BY</p>
+
+<p class="noi author">H. F. SCOTT STOKES, M.A. (Oxon.)</p>
+
+<div class="pad2">
+<figure class="figcenter" id="logo">
+  <img class="illowe6" src="images/logo.jpg" alt="logo" title="logo">
+</figure>
+</div>
+
+<p class="noi adauthor"><span class="smcap">New York</span><br>
+E. P. DUTTON &amp; COMPANY<br>
+<span class="smcap">681 Fifth Avenue</span></p>
+</div>
+
+
+
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<p class="noic">Copyright 1925<br>
+By E. P. Dutton &amp; Company</p>
+
+<p class="p2 noic"><i>All Rights Reserved</i></p>
+
+<p class="p6 noic"><i>Printed in the United States of America</i></p>
+</div>
+
+
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<div class="poetry-container">
+<div class="poetry">
+  <div class="stanza">
+    <div class="verse indent0"><i>If Jones of Chelsea should bedeck</i></div>
+    <div class="verse indent0"><i>With virgin’s head a horse’s neck,</i></div>
+    <div class="verse indent0"><i>And decorate this monstrous birth</i></div>
+    <div class="verse indent0"><i>With limbs of all the beasts on earth</i></div>
+    <div class="verse indent0"><i>And many-coloured wings, would you</i></div>
+    <div class="verse indent0"><i>Contain your laughter at the private view?</i></div>
+  </div>
+  <p class="right">Horace, <i>Ars Poetica</i>, 1–5.<br></p>
+</div>
+</div>
+</div>
+
+
+
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<p><span class="pagenum"><a id="Page_vii"></a>[vii]</span></p>
+
+<h2 class="nobreak" id="CONTENTS">CONTENTS</h2>
+</div>
+
+
+<table>
+<colgroup>
+  <col style="width: 10%;">
+  <col style="width: 80%;">
+  <col style="width: 10%;">
+</colgroup>
+<tr>
+  <th class="tdl"></th>
+  <th class="tdl"></th>
+  <th class="tdrb"><i>Page</i></th>
+</tr>
+<tr>
+  <td class="tdrt"></td>
+  <td class="tdl"><a href="#PREFACE">Preface</a></td>
+  <td class="tdrb">3</td>
+</tr>
+<tr>
+  <td class="tdrt"></td>
+  <td class="tdl"><a href="#INTRODUCTION">Introduction</a></td>
+  <td class="tdrb">13</td>
+</tr>
+<tr>
+  <td class="tdrt">I.</td>
+  <td class="tdl"><a href="#I">Of Dragons in General</a></td>
+  <td class="tdrb">16</td>
+</tr>
+<tr>
+  <td class="tdrt">II.</td>
+  <td class="tdl"><a href="#II">Of Dragons in Classical Antiquity</a></td>
+  <td class="tdrb">23</td>
+</tr>
+<tr>
+  <td class="tdrt">III.</td>
+  <td class="tdl"><a href="#III">Of Dragons in Early Christendom</a></td>
+  <td class="tdrb">29</td>
+</tr>
+<tr>
+  <td class="tdrt">IV.</td>
+  <td class="tdl"><a href="#IV">Of Dragons in Modern Europe</a></td>
+  <td class="tdrb">43</td>
+</tr>
+<tr>
+  <td class="tdrt">V.</td>
+  <td class="tdl"><a href="#V">Of Dragons in Ancient Egypt</a></td>
+  <td class="tdrb">57</td>
+</tr>
+<tr>
+  <td class="tdrt">VI.</td>
+  <td class="tdl"><a href="#VI">Of the Birth and Death of the Dragon</a></td>
+  <td class="tdrb">63</td>
+</tr>
+<tr>
+  <td class="tdrt"></td>
+  <td class="tdl"><a href="#EPILOGUE">Epilogue</a></td>
+  <td class="tdrb">72</td>
+</tr>
+</table>
+
+
+
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<p><span class="pagenum"><a id="Page_1"></a>[1]</span></p>
+
+<p class="noi title">PERSEUS</p>
+
+<p class="noi tinytitle">OR</p>
+
+<p class="noi title">OF DRAGONS</p>
+<p><span class="pagenum"><a id="Page_2"></a>[2]</span></p>
+</div>
+
+
+
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<p><span class="pagenum"><a id="Page_3"></a>[3]</span></p>
+
+<h2 class="nobreak" id="PREFACE">OF DRAGONS<br>
+<small>PREFACE</small></h2>
+</div>
+
+
+<p>I have been asked to explain the
+purpose of this study. I find a ridiculous
+difficulty in doing so, for it had
+none. My interest in dragons was
+aroused by some incidental paragraphs
+in Leslie Stephen’s <i>The Playground of
+Europe</i>. I determined to find out all
+that there was to be known about
+dragons: with the unfailing assistance
+of that great institution, the London
+Library, I made a fairly careful search;
+and, when I had exhausted my authorities
+(to whom I am greatly indebted),
+I set down with some pleasure the facts
+that had come under my notice. That
+is all.</p>
+
+<p>In case it should be objected that no<span class="pagenum"><a id="Page_4"></a>[4]</span>
+sane man could have done anything so
+elaborately purposeless, I will attempt
+a more plausible explanation—though
+the truth is exactly what I have said.</p>
+
+<p>The first four sections give a fair
+account of the dragon as known to
+history: in ancient Greece, in early
+Christendom, and in modern Europe.
+The last two endeavour to explain how
+the dragon-story may have originated
+from the myths and customs of prehistoric
+Egypt, and how humanly
+foolish the whole thing is; and they
+close with the pious hope that the
+species may in time become extinct.</p>
+
+<p>It will be objected that the dragon
+is already dead, as has been shown in
+the course of the study. It is true that
+the living, breathing, devouring dragon
+has passed away with Perseus and the
+gods of old; we have to-day only an
+occasional saga, such as the “Jabberwock,”
+a pale reflection of the full-blooded<span class="pagenum"><a id="Page_5"></a>[5]</span>
+ancient tales, lacking many
+essential details and almost apologized
+for by its author; a herald’s act of
+piety, or the unreal enthusiasm of an
+æsthete vainly seeking de-sophistication.
+It is all a faint afterglow of the
+age of faith. And yet, in England at
+any rate, the dragon is not dead.</p>
+
+<p>What are the chief characteristics of
+modern Englishmen—not the ornaments
+of society, nor artists, nor any
+other lovely ones, but these poor plain
+people who earn their daily bread,
+with or without the sweat of their
+brows, because they must; who make
+up nine-tenths of our population; who
+control our political destinies; and
+whom the Carlton Club delights to
+honour?</p>
+
+<p>They are respectability, bigotry, and
+cant. There can be no doubt about
+this. The consequence is that the men
+have no character and the women no<span class="pagenum"><a id="Page_6"></a>[6]</span>
+charm, and we rule over a quarter of
+the world with complete satisfaction to
+ourselves. These three together make
+up our modern dragon. Respectability
+is the deadliest, for it is a plausible substitute
+for better things; but it is a
+dead end, like innocence.</p>
+
+<p>Most men who have realized the
+existence of this monster apparently
+try to meet it by joining the Labour
+Party. There is nothing immoral about
+that, but I pin my faith to the less
+dogmatic method of general education.
+It is curious, by the way, to note that
+the devil is historically associated with
+knowledge and not with ignorance. It
+would take too long to explain how this
+bogey came to be hoisted, but it is still
+very commonly made use of to frighten
+children, and my true purpose is to
+plead that it <i>is</i> only a bogey, and that
+ignorance is the devil’s most effective
+weapon.</p>
+
+<p><span class="pagenum"><a id="Page_7"></a>[7]</span></p>
+
+<p>The devil’s advocate might argue
+much as follows:</p>
+
+<p class="hang">1. “You don’t really like the ‘vulgar’—they
+are not as interesting
+as your own friends.</p>
+
+<p class="hang">2. “It will come to nothing. What
+<i>is</i> the ultimate value of ‘free
+discussion’ and ‘reasoning without
+prejudice’ among people
+who don’t read and can’t think?</p>
+
+<p class="hang">3. “In so far as you do succeed, you
+will merely make them miserable:
+as thus:</p>
+
+<div class="blockquot">
+
+<p class="noi">‘Happiness is the end of life.</p>
+
+<p class="noi">‘It consists of (<i>a</i>) the admiring
+contemplation of the truly
+admirable, and the delighted
+companionship of the truly
+delightful. This is the best.
+(<i>b</i>) The second best is to
+enjoy in imagination what
+you know to be imaginary.
+(<i>c</i>) The third best is to enjoy<span class="pagenum"><a id="Page_8"></a>[8]</span>
+mistakenly what is in fact
+non-existent or ugly.</p>
+
+<p class="noi">‘There is no other good.’</p>
+</div>
+
+<p>“All this is A B C, and no longer
+worth arguing about. Then imagine
+a man well content with a mistaken
+religion, a dreary home, and an unlovely
+wife (and this describes nearly all mankind).
+What happens when you educate
+him? It is difficult for him to
+change his wife, very difficult to change
+his religion, and impossibly difficult to
+change his home—and the man is uprooted
+and miserable for life.”</p>
+
+<p>The answer is: This is all substantially
+true (which is the definition of
+caricature). Comfortable folk too
+commonly ignore the prosaic foundations
+of imperishable things. Many of
+the more delightful virtues are impossible
+vices to men struggling for the
+bare necessities of life (as you may see<span class="pagenum"><a id="Page_9"></a>[9]</span>
+any day if you try to practise ordinary
+courtesy in mounting a ’bus), and it is
+complacent cant to propose such virtues
+to them. And men so struggling are not
+altogether delightful. The point about
+them is, by what right or merit of yours
+do you live so much more easily, with
+so many more opportunities of the
+good life; and do you use your opportunities?
+And can you be of any use
+to others less fortunate than yourself?
+For the rest:</p>
+
+<p>(1) The argument defends too much.
+It defends every <i>status quo</i> against all
+change. But change, though not necessarily
+progress, is evidently necessary
+to progress; and, even if progress be
+despaired of, change is in itself nearly
+always healthy. It prevents men from
+going to sleep.</p>
+
+<p>(2) When all the world is delightful,
+all men will be able to enjoy delightful
+companionship. Meanwhile, the pioneers<span class="pagenum"><a id="Page_10"></a>[10]</span>
+must suffer, and hope for better things
+for their children.</p>
+
+<p>If it be argued that education does
+not make men delightful, in fact very
+much the contrary, I answer that that
+depends upon the education, and that,
+if genuine education doesn’t, nothing
+will; which is absurd.</p>
+
+<p>(3) When all the world loves lovely
+things, then lovely things will be easily
+come by, and ugly things will not be
+tolerated. This is not a generous
+illusion but a simple economic truth.
+Suppose I manufacture purple handkerchiefs
+adorned with green dragons:
+I do it because there is a demand, and
+if you want one perfectly plain (and
+if nobody else does) you will have to
+pay twice as much for it because it
+is a “special”; but if all the world
+wanted them plain, they would be a
+stock line and you could have them
+for half the money. Meanwhile, the<span class="pagenum"><a id="Page_11"></a>[11]</span>
+pioneers must pay double or go without.</p>
+
+<p>(4) When all the world has passed
+through the stage of intelligent scepticism
+and examined its foundations, it
+will worship the unknown god without
+fear and without reproach—a very
+right and proper thing to do. Meanwhile,
+the pioneers must be damned
+dissenters.</p>
+
+<p>That is the gist of this study:
+“Methinks I see in my mind a noble
+and puissant nation....” Good (<i>b</i>) is
+in itself better than (<i>c</i>); and it is a
+half-way house to (<i>a</i>), which (<i>c</i>) is not.</p>
+
+<p>All the textbooks tell us about the
+nature and origin of belief. I have
+but shown a few examples of what
+incredible things men believed almost
+down to our own day, and still believe.
+One of the chief functions of History
+is to show what wrongs good men have
+tolerated, and what absurdities wise
+men have believed, as a warning to<span class="pagenum"><a id="Page_12"></a>[12]</span>
+their later sons to look warily about
+them for the like. In that sense this
+study may claim to be true history.</p>
+
+<div class="poetry-container">
+<div class="poetry">
+  <div class="stanza">
+    <div class="verse indent0">That low man seeks a little thing to do,</div>
+    <div class="verse indent2">Sees it and does it:</div>
+    <div class="verse indent0">This high man, with a great thing to pursue,</div>
+    <div class="verse indent2">Dies ere he knows it.</div>
+    <div class="verse indent0">That low man goes on adding one to one,</div>
+    <div class="verse indent2">His hundred’s soon hit:</div>
+    <div class="verse indent0">This high man, aiming at a million,</div>
+    <div class="verse indent2">Misses an unit.</div>
+  </div>
+</div>
+</div>
+
+<p>We may miss an unit and die; but at
+least we shall have striven to be worthy
+of a grammarian’s funeral.</p>
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<p><span class="pagenum"><a id="Page_13"></a>[13]</span></p>
+
+<h2 class="nobreak" id="INTRODUCTION">OF DRAGONS<br>
+<small>(An Introduction to the Study of Man)</small></h2>
+</div>
+
+
+<p>I must first ask your pardon for
+troubling you with this digression, but
+the facts and the theories are so many
+and curious and the whole subject is of
+such vital importance, that I dared not
+trust to my memory alone. It must be
+admitted that most of the facts recorded
+are obviously untrue and that most of
+the theories are unsupported by evidence
+and highly improbable; though
+the facts are guaranteed by the highest
+authorities of the most ancient religions
+and the theories upheld by the most
+eminent modern scientists. Whence
+it is evident that I, like Sir John
+Mandeville, “have taken pains to
+ascertain the exact truth”; and yet<span class="pagenum"><a id="Page_14"></a>[14]</span>
+I think that from this jumble of superstitions
+and fables and conjectures and
+absurdities there does emerge something
+that may repay you for the
+weariness of an hour, and throw some
+light upon the hopes and fears with
+which the unconquerable spirit of man
+has progressed through the ages to the
+crowning triumphs of this twentieth
+century. Indeed, as Sir Thomas
+Browne finely says in his Preface:
+“A work of this nature is not to be
+performed upon one legg: and should
+smell of oyl, if duly and deservedly
+handled.” And, on second thoughts,
+I fully and unreservedly withdraw my
+apology.</p>
+
+<p>I shall begin with some attempt to
+define our subject, and then take you
+through the dragons of classical antiquity
+and early Christendom down to
+the twilight uncertainty of the sixteenth
+and seventeenth centuries and<span class="pagenum"><a id="Page_15"></a>[15]</span>
+the blank incredulity of our modern
+age. I shall then go back to the earliest
+legends of all—the Egyptian, and close
+with an attempt to harmonize the
+whole, and with a critical estimate of
+the place of the dragon in human
+thought and experience.</p>
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<p><span class="pagenum"><a id="Page_16"></a>[16]</span></p>
+
+<h2 class="nobreak" id="I">I<br>
+<small>OF DRAGONS IN GENERAL</small></h2>
+</div>
+
+
+<p>In Glastonbury, where St. Dunstan
+took the devil by the nose and where
+the Pilgrim’s Inn is dedicated to St.
+George and the Dragon, the dragon
+will always be an object of peculiar
+interest, not to say veneration. (So
+true is this that on the 16th October,
+1906, the Somerset County Council, on
+the advice of its Chairman, adopted as
+its sole device “Gules, a dragon rampant,
+or,” though the recognition of its
+increasing importance has since led it to
+add—15th October, 1912—the mace of
+office, “at a cost not exceeding £20.”)</p>
+
+<p>For Milton writes in one of his most
+harmonious numbers:</p>
+
+<div class="poetry-container">
+<div class="poetry">
+  <div class="stanza">
+    <div class="verse indent0">The old Dragon under ground</div>
+    <div class="verse indent0">In straiter limits bound</div>
+    <div class="verse indent0">Not half so far casts his usurpéd sway.</div>
+    <div class="verse indent0">And wroth to see his kingdom fail</div>
+    <div class="verse indent0">Swings the scaly horrour of his folded tail.</div>
+  </div>
+</div>
+</div>
+
+<p><span class="pagenum"><a id="Page_17"></a>[17]</span></p>
+
+<p class="noi">and St. John (<i>Revelation</i>, xx, 2)
+speaks of “the Dragon, the old Serpent,
+which is the Devil and Satan,” while the
+Serpent that tempted Eve in Paradise
+has been familiar to us all since our
+earliest childhood; though commentators
+differ as to whether it appeared
+with a virgin’s head (as some say) and
+how it was enabled to speak, and in
+Eve’s own language; and why the event
+excited no surprise in her. (Milton
+tells us—<i>Paradise Lost</i>, ix, 550, and
+what follows—that it did, and that
+“not unamazed” she took up the
+matter with the Serpent, which explained
+that it had been elevated above
+all the “other beasts that graze” by
+tasting of the tree of knowledge. This
+answer at once satisfied Eve and lured
+her on to her fall. The whole account
+is circumstantial but undocumented.)
+Some say that Eve was inexperienced
+with animals, not having been present<span class="pagenum"><a id="Page_18"></a>[18]</span>
+when Adam named them; Eugubinus
+suggests that the Serpent was a basilisk,
+at that time harmless; and the
+Emperor Julian said roundly that the
+whole story was a fable. However that
+may be, the dragon has been identified
+with nearly all the gods and devils of
+nearly all the religions of nearly all
+mankind—primitive man does not distinguish
+between the two, both being
+primarily non-moral beings of enormous
+and terrifying power—and Christian
+evidence is undivided in associating
+the dragon with the powers of darkness.
+And what could be more natural than
+that a dragon should take up its abode
+in or near Glastonbury, this region of
+hills and swamps? For it is universally
+admitted that dragons are to be found
+on the tops of mountains or in the
+depths of marshes, and it is a generally
+accepted test of evidence that what has
+been believed by all men everywhere in<span class="pagenum"><a id="Page_19"></a>[19]</span>
+every age is true—absurd, perhaps, but
+not more absurd than the modern
+opinion that what one man has once
+believed is true.</p>
+
+<p>We need not pause long over those
+other meanings of “Dragon” which so
+confused our forefathers and so delight
+our contemporary compilers of dictionaries:
+we do not propose to study that
+Dragon (Draco) who gave stringent
+laws to the ancient Athenians, nor the
+variety of carrier-pigeon known to
+natural history under that name, nor
+the star called Dragon, nor quicksilver,
+nor (directly) the sea-serpent, nor the
+flying lizard; nor have we any concern
+with the dragoons, who take their name
+either from the dragon wrought upon
+their guns or from the fact that they
+were originally mounted infantry, and
+so a kind of fabulous monster or
+“popular mystery.” Our subject is the
+common (or garden) dragon, one of the<span class="pagenum"><a id="Page_20"></a>[20]</span>
+major vertebrates, blood-red or chameleon-hued,
+with huge snake-coils, web-feet,
+bat-wings, and the head of a lion
+or an eagle, capable of snuffing up the
+wind (<i>Jeremiah</i>, xiv, 6) and holding
+companionship with owls (<i>Job</i>, xxx,
+29) though some say that the bird intended
+is the ostrich. It dwelt of old in
+mountain-caves, and lakes and marshes,
+and other inaccessible places (the fiercer
+sort favoured the mountains), and
+survives to-day only in heraldry, for
+instance, in the arms of the City of
+London, and of His Royal Highness
+the Prince of Wales. More peculiar
+and detailed descriptions of the animal
+will follow later, but it is well to note
+here its special partiality for water and
+for swallows (whence swallows flying
+low are to this day popularly supposed
+to herald rain), and its habit of guarding
+treasures—gold, pearls, and precious
+stones—and of emitting thunder and<span class="pagenum"><a id="Page_21"></a>[21]</span>
+lightning. Eating its heart confers
+peculiar qualities, notably fertility and
+the gift of tongues, and the draconite
+or precious stone which lies embedded
+in its forehead has incredible properties
+in the way of medicine and magic, but
+only if you catch the animal alive and
+remove the stone without otherwise
+injuring it. (The recorded instances
+of this feat are remarkably rare, most
+authentic draconites having fortunately
+fallen from the head of the beast while
+in flight, very much as a meteorite
+might fall to-day.)</p>
+
+<p>Without further theorizing or inquiry,
+we will pass on to the old Greek
+legend of Perseus, pausing only for the
+pleasant task of exploding one particularly
+absurd opinion about the origin of
+the dragon. Sceptics have suggested
+that it is nothing but primitive man’s
+hazy and terrified tradition of the antediluvian
+monsters which walked the<span class="pagenum"><a id="Page_22"></a>[22]</span>
+early earth and which adorn the first
+pages of Mr. Wells’ <i>Outline of History</i>;
+but science now tells us that something
+like seven million years elapsed between
+the passing of the last of these and the
+first appearance of the first of our fairly
+human forebears.</p>
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<p><span class="pagenum"><a id="Page_23"></a>[23]</span></p>
+
+<h2 class="nobreak" id="II">II<br>
+<small>OF DRAGONS IN CLASSICAL ANTIQUITY</small></h2>
+</div>
+
+
+<p>There were numerous dragons in old
+Greece, “gorgons and hydras and
+chimæras dire,” and all the best heroes
+had at least one apiece to their credit;
+but they were a confusing and unfriendly
+lot, and we will confine ourselves
+to the central legend of Perseus.</p>
+
+<p>“An oracle warned Acrisius, King of
+Argos, that he would surely die by the
+hand of his daughter Danæ’s son. To
+prevent this, he locked the fair maiden
+in a tower of brass, which he built for
+the purpose. But Zeus, king of Heaven,
+visited her in the disguise of a golden
+shower of rain, and, much to Acrisius’
+annoyance, she bore a son, Perseus.<span class="pagenum"><a id="Page_24"></a>[24]</span>
+Acrisius then shut them up in a chest
+and cast them into the sea; but, far
+from being drowned or inconvenienced
+by the motion, the babe slumbered as in
+a rocking cradle, and in due course the
+chest was drawn safely ashore on
+Seriphos by Dictys, brother to Polydektes,
+king of that island, who took
+the pair under his protection. Time
+passed, and Polydektes sought to marry
+the unwilling Danæ, and, to get rid of
+Perseus, now a strapping lad, sent him
+off to kill Medusa and bring home her
+head. Medusa was a kind of dragon
+called a Gorgon, who, though mortal
+herself, had two immortal sisters.
+Their parentage, though obscure, was
+extremely distinguished, whence their
+troubles; for as half-castes they had no
+lot or portion with gods or men, which
+to three lively young women (as they
+then were) was insufferably dull. Their
+speaking countenances betrayed the<span class="pagenum"><a id="Page_25"></a>[25]</span>
+depth of their more than human suffering,
+so much so that in course of time
+they became so terrible to look upon
+that any man who should see them
+would be turned to stone at sight. In
+this awkward predicament Perseus was
+fortunate in possessing friends in high
+places. The goddess Athene gave him
+a mirror, to strike the creature after
+the manner of a man shaving, without
+directly looking on her—an awkward
+and unconvincing manœuvre. The god
+Hades gave him a helmet of invisibility,
+apparently of a higher class than the
+device adopted by Old Peter in the Bab
+Ballad. (He, you will remember, duly
+became invisible, but his clothes did
+not; whence divers inconveniences.)
+Or perhaps the hero travelled in
+primitive simplicity (but that wouldn’t
+account for his weapons). The god
+Hermes gave him his own winged shoes,
+and the god Hephæstus a mortal blade.<span class="pagenum"><a id="Page_26"></a>[26]</span>
+Armed with these contrivances, and
+luckily finding the Gorgons asleep,
+Perseus completed his task and started
+for home with the head in a travelling-bag
+with which he had prudently
+provided himself (for the head was still
+fatal to view). On his way he turned
+Atlas to stone (and you can see the
+Atlas mountains to this day), either out
+of pity for his sufferings—he had to
+hold up all heaven on his head, and
+heaven was, as in early Christendom,
+completely solid—or, as some say, in
+revenge for some trivial rudeness. If so,
+it is a regrettable blot on his otherwise
+unsullied escutcheon; for even Medusa
+had longed to die. Flying on, he next
+beheld Andromeda, daughter of Cepheus
+king of Ethiopia, bound to a rock and
+waiting to be devoured by a dragon.
+This dismal scene had been staged by
+Zeus to appease the Old Man of the Sea,
+because the king’s wife had boasted<span class="pagenum"><a id="Page_27"></a>[27]</span>
+that she (or, some say, her daughter)
+was more beautiful than the nymphs
+of the sea. Perseus rapidly appreciated
+the situation, pressed the terrified
+damsel to marry him (about which in
+her distress she made no difficulty,
+though already betrothed to her uncle
+Phineus, who was safely under cover at
+home), killed the instrument of divine
+vengeance when it lumbered up clumsily
+from the sea, so that the waves ran red
+with its blood—and duly married
+Andromeda. The skulking uncle made
+a regrettable scene at the ceremony,
+and the bloody fight was terminated
+only by Perseus producing the fatal
+head of Medusa, which turned his
+enemies to stone. Returning home
+with his bride, he restored his grandfather,
+who had been dethroned by a
+wicked brother, and reached Seriphos
+in time to save his mother from Polydektes,
+whom he replaced by the<span class="pagenum"><a id="Page_28"></a>[28]</span>
+faithful Dictys. Shortly afterwards he
+was throwing the hammer at some
+sports organized by a neighbouring
+monarch, when his aged grandfather
+unluckily got in the way and received
+a fatal blow on the head; and the old
+oracle was fulfilled. Perseus inherited
+his kingdom, and begot a numerous
+progeny; but this idyllic scene was
+overshadowed by the gloom of the
+accident, and he found no peace until
+he exchanged thrones with the king of
+Tiryns, where he lived to a ripe old age,
+and died, universally lamented, in the
+bosom of his family.”</p>
+
+<p>Such is the old Greek legend: two
+dragons, a supernatural birth, supernatural
+weapons, faithful and wicked
+brothers, a rescued maiden, and the
+inexorable doom of Fate. We shall
+come back to this in our conclusion.</p>
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<p><span class="pagenum"><a id="Page_29"></a>[29]</span></p>
+
+<h2 class="nobreak" id="III">III<br>
+<small>OF DRAGONS IN EARLY CHRISTENDOM</small></h2>
+</div>
+
+
+<p>There were numerous dragons in
+early Christendom, “gorgons and
+hydras and chimæras dire,” and all
+the best saints had at least one apiece
+to their credit; but they were a confusing
+and unfriendly lot, and we will
+confine ourselves to the central legend
+of St. George.</p>
+
+<p>“St. George is one of that numerous
+class of Saints about whom nothing
+authentic is known”: but, piecing
+together the <i>Golden Legend</i> and the
+Portuguese and Balkan variants, we
+arrive at the following:</p>
+
+<p>“The people of Troyan were sunk in
+all manner of iniquity, which greatly<span class="pagenum"><a id="Page_30"></a>[30]</span>
+shocked Our Lady, who happened to
+visit the place. Returning to Heaven,
+she protested to God, who sent bears to
+frighten them into righteousness. This
+proved of no avail, and, on the suggestion
+of Elijah, God then sent them all
+manner of plagues and poxes for seven
+years, but without result; he then sent
+a drought for a similar period, and, as
+they still remained unconverted, he
+created a lake in the neighbourhood and
+in it a dragon which visited the city
+three times a day and devoured three
+hundred inhabitants at each visit; in
+addition to these ‘hearty meals’ it
+demanded a virgin nightly, and at last
+the lot fell upon the king’s daughter;
+after obtaining eight days’ grace for
+lamentation, he was finally forced to
+abandon her with his blessing; but the
+blessed George (a child of supernatural
+birth, induced by his mother’s eating
+a peculiar fish), passing by on his<span class="pagenum"><a id="Page_31"></a>[31]</span>
+dappled courser with his mortal lance,
+greeted her in the name of God and
+inquired why she was there; after
+hearing her story and satisfying himself
+as to her faith and morals (‘Had
+her heart always been pure?’ etc.) he
+dismounted and planted his lance in
+the earth. He then laid his head in her
+lap, saying: ‘Pray examine my head
+a little, for I feel strangely sleepy.’
+Under the soothing influence of her
+gentle fingers he fell asleep, and the
+abrupt transitions of a traditional ballad
+do not enable us to judge whether the
+damsel was long occupied in removing
+the consequences of his saintly disregard
+for cleanliness; while he rested,
+the lake rose in waves and the dragon
+emerged. The bashful maid was
+ashamed to waken her deliverer, but her
+tears rolled down upon his face and he
+leapt up like one possessed, and,
+fortified with the sign of the Cross,<span class="pagenum"><a id="Page_32"></a>[32]</span>
+heavily wounded the dragon. ‘Pass thy
+girdle round its neck, nothing doubting
+(said he) and lead it into the city, and
+bid them be converted: if they refuse,
+set free the insatiable dragon and he
+will destroy the people of Troyan.’
+The argument thus presented on his
+behalf by the Princess proved irresistible
+and they were converted to the number
+of 20,000 excluding women and children.
+The fate of the dragon is uncertain, but
+one version tells, in some detail, how it
+was then killed and how four pairs of
+oxen were required to remove it. The
+grateful monarch erected a Church to
+Our Lady and St. George (whose
+promotion appears to have been
+remarkably rapid) and offered him
+money and his daughter to wife. But
+that holy and unambitious man replied,
+‘Give the money to the poor, care for
+the Church, honour the priests, and
+diligently attend divine worship.’ As to<span class="pagenum"><a id="Page_33"></a>[33]</span>
+the daughter, the difficulty is that
+George, by virtue of vows he has
+taken, cannot marry. At this critical
+moment his brother sees by a magical
+life-token that George is in danger, and,
+hurrying off, arrives in time to accommodate
+his tender conscience by taking
+the lady himself and leaving George
+the honours of canonization.” Virtue
+always triumphs in fairy-tales.</p>
+
+<hr class="tb">
+
+<p>Such is the early Christian legend:
+A dragon, a supernatural birth, a
+helpful horse, a faithful brother, a
+life-token, and a rescued maiden; and
+“the Church may be congratulated on
+having converted and canonized the
+pagan hero Perseus.” But before
+passing on to more modern evidence,
+it will be well to give some account of
+the popular variants which circulated
+all over the world as fairy-tales, superstitions,
+or romances, almost down to<span class="pagenum"><a id="Page_34"></a>[34]</span>
+our own day. The point in this case is
+not so much who told or believed or
+guaranteed them, but the simple fact of
+their having been told.</p>
+
+<p>They consist almost invariably of
+four incidents: the supernatural birth,
+the life-tokens, the helpful animals or
+the magic weapons, and the rescued
+maiden.</p>
+
+<p>(The most recent I believe to be the
+poem on the “Jabberwock,” which
+occurs in <i>Through the Looking Glass</i>.
+The hero, though evidently somebody’s
+child (“Come to my arms, my beamish
+boy”), has no undoubted sire. The
+tum-tum tree (“So rested he by the
+tum-tum tree”) is probably a life-token.
+His vorpal sword (“His vorpal
+blade went snicker-snack”) is without
+doubt a magic weapon, and the “slithy
+toves,” “mome raths,” and “borogroves”
+may well be helpful animals.
+The rescued maiden is not specifically<span class="pagenum"><a id="Page_35"></a>[35]</span>
+mentioned, but it is difficult to explain
+in any other way the behaviour of the
+monster (“manxome,” “whiffling,”
+“burbled”) or the motives of the
+hero).</p>
+
+<p><i>The Supernatural Birth.</i> “Heroes of
+extraordinary achievement or extraordinary
+qualities were necessarily of
+extraordinary birth. The wonder or
+the veneration they inspired seemed to
+demand that their entrance upon life,
+and their departure from it, should
+correspond with the impression left by
+their total career.” It is scarcely an
+exaggeration to say that every old
+Oriental tale begins with the words:
+“There was a king who had no
+children,” and the means adopted by
+them for achieving their pious purpose
+may be the eating of fish, fruit, barleycorns,
+eggs, saltpetre, or a dragon’s
+heart. There are dangers in all these
+unusual methods, as in the case of the<span class="pagenum"><a id="Page_36"></a>[36]</span>
+man who was given a male and a female
+fish of which his wife was to eat one
+according to the sex desired. Wanting
+a son, and to guard against accident,
+the rash man ate the female fish himself,
+“with the wholly unexpected result
+that he himself gave birth to a
+daughter.” In another case, the
+dragon’s heart, while being cooked,
+“began to emit a pitch-black smoke so
+powerful in its effects that the condition
+not merely of the queen (who tasted
+the heart) but of the maiden who
+cooked it, as well as of every article of
+furniture in the room, became interesting.
+The old four-post bedstead gave
+birth to a cradle,” and so on and so
+forth—a very economical method of
+furnishing. In European tales, on the
+other hand, “the medicine is more
+frequently used to gratify spite against
+an unfortunate maiden” by putting her
+unwittingly in blessed circumstances.<span class="pagenum"><a id="Page_37"></a>[37]</span>
+In every case at least one child is born
+“of powers, it need hardly be said, as
+remarkable as his parentage.” Other
+substances which are “sovran against
+barrenness” are water, wind, sun, and
+a magic touch.</p>
+
+<p><i>The Life-tokens.</i> Very commonly the
+hero has one or two brothers born with
+him in the same miraculous way, and
+they set out on their fortunes together.
+What enables them to keep in touch
+when they part is a magic life-token,
+also born with them in the same way—for
+instance, a tree which grows from
+part of the fish planted in the garden at
+the time that their mother ate her part.
+Each one of them will have such a tree
+or branch which thrives or withers
+according to his own fortunes, and by
+this token each knows when the other
+is in danger, and comes to his rescue
+as in the case of St. George. Sometimes
+it is a magic mirror, in which only the<span class="pagenum"><a id="Page_38"></a>[38]</span>
+party concerned can see the fate of his
+brother—“no doubt the eye of faith
+was required to see anything in it.”
+By this means the brothers invariably
+rescue each other, or, if they come too
+late or if a witch has turned the unlucky
+one to stone, either the witch thoughtfully
+provides the elixir of life or she is
+killed and it is found among her
+effects, or the faithful animals find it.
+Safely reunited, they commonly agree
+upon the division of their very considerable
+spoils; but in some cases
+they fall out and one kills the other,
+in which case the “elixir of life” comes
+into play again and they all live happily
+ever after. It may well be that the
+repentant brother will see two snakes
+fighting: one kills the other, but in
+remorse brings it to life again with a
+magic herb: the sagacious fellow takes
+the hint, and all is well again.</p>
+
+<p><i>The Helpful Animals.</i> These are<span class="pagenum"><a id="Page_39"></a>[39]</span>
+often begotten together with and in
+the same miraculous way as the heroes
+and the life-tokens. Arranged according
+to what we may now call “the
+Bovril principle,” they come in the
+following order: horses, dogs, hawks,
+lions, wolves, falcons, bears, foxes,
+eagles, ants, dog-fishes, bulls, calves,
+hares, boars, cats, winged horses, and
+deer.</p>
+
+<p><i>The Magic Weapons.</i> These are an
+obviously later variant of the same idea
+and, on the same principle, stand in the
+following order: lance, shield, sword,
+pistol, gun, magic wand, stick, bow and
+arrow, knife, beer, stole, magic water,
+powder-horn, air-gun, iron staff, 500-lb.
+club, mace, and crucifix.</p>
+
+<p><i>The Rescued Maiden.</i> In every case
+the function of the hero and all his
+apparatus is to rescue a distressed
+maiden from a monster to whom she is
+being sacrificed to appease the Gods.<span class="pagenum"><a id="Page_40"></a>[40]</span>
+Often the hero, having rescued the
+lady, “ungallantly refuses to see her
+home, saying that he wishes to see a
+little more of the world.” But, before
+departing, he takes some token—the
+dragon’s tongue or eye or other part,
+or the lady’s handkerchief or other
+ornament. His desertion leaves her a
+prey to the first impostor who comes
+along, claims the victory for himself
+and the lady in marriage. In the nick
+of time the hero returns and shows up
+the impostor “and poetical justice is
+completed by his marriage with the
+lady” (who has always fallen in love
+with him at first sight), while her
+sisters (for she has two sisters) are
+commonly given to the two other
+princes (for he has two brothers).</p>
+
+<p>As I have said, all the best Saints
+performed feats of this nature, including
+the Holy Apostles Philip and Matthew,
+St. Michael, St. Margaret, St. Hilarion,<span class="pagenum"><a id="Page_41"></a>[41]</span>
+St. Donatus, St. John, St. Sylvester,
+Pope Leo IV, and a man named Smith
+(at Deerhurst in Gloucestershire). It
+is also told of a boy who was carried
+off by a dragon that, after long years,
+he was found in its cave “alive and
+reading the Gospel, which was held up
+before him by St. Friday, while St.
+Sunday further contributed to his convenience
+by holding the candle.”</p>
+
+<p>Scarcely ten miles from Glastonbury
+a terrible dragon lived once on Aller
+Hill over beyond High Ham. His
+fiery breath destroyed the people and
+their flocks and herds, and he was particularly
+partial to maidens. The
+climax came when a young man called
+one morning to fetch his bride away
+to Church: her home</p>
+
+<div class="poetry-container">
+<div class="poetry">
+  <div class="stanza">
+    <div class="verse indent0">Was levelled to the ground,</div>
+    <div class="verse indent0">And on its ruins, now a funeral pyre</div>
+    <div class="verse indent0">Smouldered the ashes of her aged sire</div>
+  </div>
+</div>
+</div>
+
+<p><span class="pagenum"><a id="Page_42"></a>[42]</span></p>
+
+<p class="noi">and the foul monster had carried her
+off to his cave. The bridegroom swore,
+in his despair, that “earth should no
+longer hold a thing so vile,” and,
+marching off with his friends, killed the
+dragon and rescued his bride; but the
+story ends on a classical note of tragedy,
+for she died of horror in his house that
+very day.</p>
+
+<p><i>Reference</i>: E. Sidney Hartland, <i>The
+Legend of Perseus</i>, 3 vols. (London,
+1896).</p>
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<p><span class="pagenum"><a id="Page_43"></a>[43]</span></p>
+
+<h2 class="nobreak" id="IV">IV<br>
+<small>OF DRAGONS IN MODERN EUROPE</small></h2>
+</div>
+
+
+<p>It will be well to begin this section
+with short accounts of the two most
+satisfactory Renaissance dragons: the
+Dragon of Rhodes and the Dragon of
+Bologna.</p>
+
+<p>“The history of the ancient Order of
+the Knights of St. John (not yet removed
+to Malta) records that about the
+year 1330 Dieudonné de Gozon, afterwards
+third Grand Master of the Order,
+joined the Knights in Rhodes, and was
+filled with pious zeal to kill a terrible
+dragon which ravaged the Island; but
+the then Grand Master considered such
+extravagant gaieties too dangerous for
+a knight vowed to the defence of
+Christendom, and roundly forbade it.<span class="pagenum"><a id="Page_44"></a>[44]</span>
+On this de Gozon returned to the castle
+of his ancestors near Tarascon in
+France, and, with the help of an ingenious
+dummy dragon (so little does
+the art of war change), trained his
+horses and dogs to face the monster,
+and, returning, killed it and removed its
+tongue as evidence. A lying Greek (so
+little does the Greek nature change)
+found the carcase and claimed the victory;
+but de Gozon showed him up by
+producing the tongue—and was put in
+prison for disobedience. The Pfalzgraf
+Ottheinrich made our first written record
+of this feat when passing through
+on a pilgrimage in 1521, and the corroborative
+evidence is indisputable: the
+feat is said to have been recorded on the
+tombstone of the knight (we have the
+tombstone, and it isn’t); there are
+said to be pictures of it in a wall-painting
+in a house in Rhodes (which cannot
+be found); and the family are said to<span class="pagenum"><a id="Page_45"></a>[45]</span>
+have preserved the draconite taken by
+the hero from the monster’s forehead
+(the family has disappeared); the head
+itself was seen by a seventeenth century
+traveller still nailed to a gate in Rhodes,
+though it disappeared during the last
+century. For countless years the simple
+islanders had displayed it for the glory
+of God and without thought of gain,
+and it would perhaps be uncharitable
+to connect its disappearance with the
+recent development of transatlantic
+transport, or with the discoveries of
+modern science, which have shown that
+the skeleton of the dun-cow at Warwick
+is simply that of a whale. And, finally,
+they will show you to this day in
+Rhodes the cave where the dragon
+lived.”</p>
+
+<p>The story of the Dragon of Bologna
+is tame by comparison. It is recorded
+in great detail in <i>The Natural History
+of Serpents and Dragons</i> by Professor<span class="pagenum"><a id="Page_46"></a>[46]</span>
+Ulysses Aldrovandus, published at
+Bologna by Mark Antony Bernia in
+the year 1640, at his own charges, with
+a dedication to the Prince-Abbot
+Franciscus Perettus, and with the
+approval of the Holy Roman Emperor
+Rudolph, the Rector to the Cardinal-Archbishop
+of Bologna, and the legal
+adviser to the Most Holy Office of the
+Inquisition in that city.</p>
+
+<p>The story is as follows (p. 402):
+“In the early summer of the year 1572,
+to wit on the 13th of May, the dragon
+appeared in the outskirts of Bologna,
+hissing horribly. It was caught the
+day after Ascension Day by a cowherd
+called Baptista of Camaldulus, about
+5 P.M. and about seven miles out from
+the City, on the high road. His cows
+saw it and stopped dead, and Baptista,
+who was behind with his cart, pricked
+them on with his goad; but they went
+down on their knees and wouldn’t<span class="pagenum"><a id="Page_47"></a>[47]</span>
+budge. Then he heard a great hissing
+and beheld the astounding monster:
+but though frightened out of his wits,
+he up with his stick and knocked it on
+the head so that it died. The brave
+herd, fearing it might not be dead, cut
+off one of its feet and brought it into
+Bologna as evidence. After three days
+the noble Horatius Fontana gave orders
+for the carcase to be sent to the great
+naturalist Aldrovandus, who declared
+it to be unique in all Italy and all
+Europe, and had it stuffed and put in
+the museum (whence it has unluckily
+disappeared). It was about this same
+time that the flying dragon appeared
+by night in the sky, and no sane man
+will doubt that these portents were
+sent in honour of Pope Gregory XIII,
+who took office in that year and who
+sported a dragon on his coat-of-arms.”</p>
+
+<p>This same Aldrovandus is our chief
+source of information on the modern<span class="pagenum"><a id="Page_48"></a>[48]</span>
+dragon. He sets out, in due scholastico-scientific
+style, first the alternative
+meanings of the word “dragon,” with
+a note that Virgil is very haphazard in
+his use of “dragon” or “serpent” for
+snakes in general; then the synonyms,
+as “syren,” “leviathan,” and the
+Hebrew <i>oach</i> (whence perhaps our
+word “hoax”); then size—5 to 100
+cubits (we may split the difference and
+safely say about 50); habitation—Libya,
+India, Atlas, Æthiopia, Florida,
+etc. (with a caution that the species
+born of a wolf and an eagle is probably
+fabulous and nowhere to be found);
+colour—red, black, ashen, pea-green,
+indeed the evidence is hopelessly conflicting;
+description—head of a virgin
+or wild-boar, goose-feet or talons or
+hoofs (they probably vary); St. Augustine
+confirms Herodotus’ opinion that
+they fly; poison—more virulent in the
+hotter climes; jaw—some say very<span class="pagenum"><a id="Page_49"></a>[49]</span>
+large, some say very small, some say
+two rows of teeth, some say three, and
+the number is in any case uncertain;
+manners and customs—very vigilant
+and fond of gold (so we see why they
+are normally set to guard treasures),
+not afraid of men, and able to throw
+elephants with their tails: four or
+five, says Pliny, will twine their tails
+together for a long flight and so cover
+the distance at an incredible speed;
+very fierce, but Heracleides, the philosopher,
+had one so tame that it followed
+him about like a dog; birth—the
+evidence is conflicting as to whether
+from eggs or immediately. Remedies
+against their poison—red mullet applied
+externally or (better) internally, or
+(best of all) the head of a dragon
+skinned and applied to the bite. Capture—men
+of the most magnificent
+courage drug them with opium-seeds,
+so as to obtain the draconite; a scarlet<span class="pagenum"><a id="Page_50"></a>[50]</span>
+cloak and the appropriate incantation
+are effective, and an axe has been tried
+with success: a useful trick is to catch
+them when they are preoccupied with an
+elephant-fight (their customary recreation),
+and another very good plan is to
+put down sulphur, which the creature
+eagerly gulps down and then moving to
+the nearest river drinks until it bursts.
+(This was the device of the great
+Cracus, who gave his name to Cracow.
+It is an elaboration of the Prophet
+Daniel’s method of dealing with Bal’s
+dragon—that holy man’s mixture, it
+will be remembered, itself exploded the
+dragon; but the march of science and
+the closer study of animal-habits no
+doubt made Cracus’ scheme more convincing.)</p>
+
+<p>The eyes are precious stones and the
+teeth ivory; the fat is a sovereign
+remedy against poison, fever, and
+blear-eyes; the spine is a great cure<span class="pagenum"><a id="Page_51"></a>[51]</span>
+for toothache; the gall-bladder and
+intestines mixed with wine effect more
+than was ever claimed for Colman’s
+mustard in the bath, removing warts.
+It is very lucky to bury a dragon’s head
+under the front doorstep, and the eyes
+make a fine poison and send away
+nightmares: and so on and so forth—all
+this less than three centuries ago.</p>
+
+<p>A little later, about 1660, the learned
+Jesuit Kircher visited the Alps, and,
+though discounting many devils as
+due to the credulity of the peasantry,
+could not resist the conclusion that so
+horrid and inhospitable a country could
+only have been intended by God to
+harbour dragons, especially when a
+public notice in the Church of St.
+Leodegarius (our old friend St. Leger,
+the patron-saint of bookmakers?) in
+Lucerne told how a man “paused
+some months in a cave with two
+dragons, who were either naturally<span class="pagenum"><a id="Page_52"></a>[52]</span>
+amiable or were calmed by his energetic
+appeals to the Virgin, and finally
+escaped by holding on to their tails when
+they flew away after their period of
+hybernation” (History does not record
+whether they adopted Pliny’s plan, or
+whether by a merciful dispensation of
+Providence they flew so close together
+that he suffered no strain).</p>
+
+<p>The anonymous author of <i>The Golden
+Coast, or a Description of Guinney</i>
+(London, 1665) has little reliable
+information on this or any other
+subject. The people, he tells us, are
+Nigritæ “from their colour, which
+they are so much in love with that they
+use to paint the Devil white”; and of
+the elephant, “which some call Oliphant,”
+that “they have continual war
+against dragons which desire their blood
+because it is very cold.” The book
+abounds in such old tales out of Pliny
+and Bartholomew Anglicus, and has<span class="pagenum"><a id="Page_53"></a>[53]</span>
+all the appearance of a literary puff of
+the Company of Royal Adventures of
+England trading to Africa (est. 1662);
+for what honest man could have waxed
+so enthusiastic over that death-trap of
+a country, where (says he) “a man
+may gain an estate by a handfull of
+beads, and his pocket full of gold for an
+old hat; where a cat is a tenement and
+a few fox tails a Mannor; where gold
+is sold for iron, and silver given for
+brasse and pewter?” The Company
+failed shortly afterwards and was replaced
+by the Royal African Company
+(1672), and this may well have been
+to over-spending in the Advertising
+Department.</p>
+
+<p>Doctor Thomas Browne, in his
+“<i>Enquiries into very many received
+tenents, and commonly presumed
+truths</i>” (London, 1686) (commonly
+called Browne’s <i>Vulgar Errors</i>) is
+more modern, but, he, like a sensible<span class="pagenum"><a id="Page_54"></a>[54]</span>
+man takes a middle path between scepticism
+and faith—thinks we cannot
+safely deny that there is such an animal
+as the basilisk; but we are not to confuse
+it with the cockatrice, a mere hieroglyphical
+fancy, though even the
+cockatrice he will not declare to be
+impossible (he does not see how such
+an oddity <i>can</i> be hatched from “a
+cock’s egg” (<i>sic</i>: the phenomenon occurs
+only in a cock’s eighth year, and
+causes it acute discomfort put under a
+toad or serpent)); but many inventions,
+he says, are really “the courteous revelations
+of spirits,” and we must not be
+too cocksure of our merely human
+faculties.</p>
+
+<p>Scheuchzer, the learned Botanist who
+toured the Alps in the first ten years
+of the eighteenth century, frankly
+adopted the compromise implicit in
+Aldrovandus—always to believe half
+of what he was told; but he thought<span class="pagenum"><a id="Page_55"></a>[55]</span>
+the dragon-stone in the museum at
+Lucerne entirely convincing; for (says
+he) a dishonest man would not have invented
+so simple a story as its falling
+from the sky—but rather some fabulous
+tale about its coming from the farthest
+Indies; and the stone not only cures
+simple hæmorrhages, which ordinary
+jasper or marble might well do, but
+dysentery and fevers and all those ills
+of which, to judge from the advertisements
+in the local press, Glastonians
+may now rid themselves so much more
+simply. Item, a respectable citizen
+returned home one evening lately “with
+a swimming in the head and a
+marked uncertainty about the motions
+of his legs, and how can we doubt his
+word when he attributes these unprecedented
+phenomena to the influence
+of the dragon who encountered him in
+the forest?” Scheuchzer’s scientific
+journals were published at the expense<span class="pagenum"><a id="Page_56"></a>[56]</span>
+of the Royal Society of London.
+Credible witnesses of to-day maintain
+that “not the vestige of a dragon is
+to be found, even in those wildest
+regions of the Alps which ... were
+especially adapted for their generation.”
+Thus do beauty and romance fade
+before the advance of Winter Sports
+and Grand Babylon Hôtels.</p>
+
+<p><i>References</i>: Aldrovandus, <i>op. cit.</i></p>
+
+<p>Thomas Browne, <i>op. cit.</i></p>
+
+<p>Leslie Stephen, <i>The Playground of
+Europe</i> (London, 1871).</p>
+
+<p>E. Ray Lankester, <i>Science from an
+Easy Chair</i> (London, 1910).</p>
+
+<p>F. W. Hasluck, <i>The Dragon of
+Rhodes</i> (British School at Athens,
+1914).</p>
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<p><span class="pagenum"><a id="Page_57"></a>[57]</span></p>
+
+<h2 class="nobreak" id="V">V<br>
+<small>OF DRAGONS IN ANCIENT EGYPT</small></h2>
+</div>
+
+
+<p>It is reported of Mr. Winston
+Churchill that, being challenged one day
+by a Frenchman as to the remarkable
+uniform he was wearing, he replied in
+the same language that he was an Elder
+Brother of the Trinity. “Ah!” said
+the Frenchman, “that is indeed a
+unique distinction.”</p>
+
+<p>It is not so unique as might be
+supposed. If we could betake ourselves
+to the Egypt of 5,000 years ago, we
+should find them worshipping a Trinity
+of their own: Isis the all-Mother;
+Osiris the Son, and Horus. Isis, the
+forerunner of all the gods of all mankind
+was the goddess of fertility—goddess,<span class="pagenum"><a id="Page_58"></a>[58]</span>
+not god, for what could be more
+evident than the female fact of birth,
+whereas male assistance went long
+unrecognized. The savage mother,
+finding herself with child, would attribute
+her condition not to a “commonplace
+event which took place perhaps
+many months before,” but to a
+recent thunderstorm or other striking
+phenomenon to which all could bear
+witness.</p>
+
+<p>So Isis ruled alone for a while, and
+then in her own inimitable fashion gave
+birth to the water-god Osiris; and
+between them in due course they
+produced the warrior Horus, who in the
+fullness of time became the avenger of
+Osiris, when the powers of darkness
+slew him.</p>
+
+<p>This is the bald and essential outline
+of their faith. The details are extremely
+confusing, partly because of variants,
+but principally because the savage-mind<span class="pagenum"><a id="Page_59"></a>[59]</span>
+<i>is</i> so confused. “Anne’s Mother’s
+daughter, Mother’s Anne’s daughter,”
+reasons my baby; and the small boys
+who deliver messages round the factory
+find a similar difficulty in distinguishing
+between the Buying Department and
+the Sales Department. In exactly the
+same way the gods of old Egypt became
+inextricably mixed. The tale told of
+one is easily applied to another, and
+God the doer easily becomes God the
+done-by; while the symbol of the god
+will equally well pass for (say) the
+enemy of the god, or the weapon with
+which he fought. Like the old lady in
+the story, they “do not distinguish.”
+(Compare how our Arthur and the
+Saxon Cedric, whom he fought at
+Langport, were both identified with
+the dragon.)</p>
+
+<p>After this warning, the chief events
+of the Egyptian Old Testament may not
+seem so absurd. They centre round<span class="pagenum"><a id="Page_60"></a>[60]</span>
+“The Destruction of Mankind,” the
+original of all our myths.</p>
+
+<p>The story is that Isis became angry
+with mankind because of their infidelity,
+and determined to slay them all. She
+set about it with a will and the earth
+ran red with their blood; but when
+she was near the end of her task, the
+other gods took pity on those who
+were left, and determined to thwart
+her. This they did by giving her some
+doctored beer, whereupon she became
+“genially inoffensive”—and so the
+remnant escaped; and to this day
+their descendants generally regard beer
+with an almost superstitious veneration.
+The Flood is an obvious and world-wide
+variation of this theme.</p>
+
+<p>The next stage is that Isis the slayer
+becomes Isis the slain, whose sacrifice
+will atone for the sins of mankind.
+The grandmother goddess then becomes
+a mere mortal, “a beautiful and<span class="pagenum"><a id="Page_61"></a>[61]</span>
+attractive maiden”—say a virgin: the
+virgin is then abandoned to her fate,
+and rescued by the conquering hero,
+and we are hot on the trail of Perseus
+and St. George.</p>
+
+<p>But, you will say, what has all this
+to do with dragons? It must be
+admitted that in Egypt, “the great
+breeding-place of monsters,” no dragons
+survive in full-blown splendour; but
+these legends are the germ of all, and
+from them springs the essential dragon-conflict,
+the vendetta of Horus against
+the powers of darkness. The dragon
+has also been identified with Osiris the
+good controller of water, with Set the
+evil who killed him, with Isis in so far
+as she is confused with Osiris, and with
+Horus as the successor of Osiris, but
+we shall only become confused if we
+try to follow all its transformations.</p>
+
+<p>We have come now to the end of all
+our tales, and I shall try in the last<span class="pagenum"><a id="Page_62"></a>[62]</span>
+part of this section to link up all the
+parts; to show you how remarkably
+little essential change there has been in
+man’s thinking for fifty centuries, and
+how the commonplace incidents of
+originally prosaic stories became distorted
+and elaborated with corroborative
+detail, quite regardless of the
+original and often forgotten meaning.</p>
+
+<p><i>Reference</i>: Elliot Smith, <i>The Evolution
+of the Dragon</i> (London, 1920).</p>
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<p><span class="pagenum"><a id="Page_63"></a>[63]</span></p>
+
+<h2 class="nobreak" id="VI">VI<br>
+<small>OF THE BIRTH AND DEATH OF THE DRAGON</small></h2>
+</div>
+
+
+<p>The chief satisfaction which learned
+men appear to derive from these tales
+is quarrelling about their common or
+separate origin. The Separatists say
+that their resemblances merely show
+how very much alike men are, the
+world over; the Communists that they
+are so very intricate and so far from
+obvious that they must have sprung
+from a common stock (<i>cf.</i> Mr. W. J.
+Perry’s and Professor Elliot Smith’s
+theories as to the common—Egyptian—origin
+of militarism, mining, and
+many other branches of megalithic and
+modern culture). Personally I am a
+Communist; for it is a perfectly good<span class="pagenum"><a id="Page_64"></a>[64]</span>
+principle, common to science and
+theology, that miracles are not to be
+multiplied, beyond necessity. The
+question is, in any case, of no fundamental
+importance to us, but it will
+simplify what follows if I make my
+standpoint plain.</p>
+
+<p>When our first fathers found themselves
+at large in this already ancient
+world, the first fact they noticed was
+that they were alive. Like all their
+descendants after them, they wisely
+worshipped facts, and they made a
+religion of fertility; like us too, and like
+all those who will follow us, they knew
+nothing certain of the two infinities
+from which we come and to which we
+go, before birth and after death. The
+next fact they noticed was that other
+men died, though their minds shrank in
+horror from the fact that they too must
+die, and could not entertain it. They
+hankered after immortality, for their<span class="pagenum"><a id="Page_65"></a>[65]</span>
+dear ones and (later) for themselves, as
+we hanker after it, and as our children
+will; for in course of time it became a
+commonplace of all the world that all
+men must die, and this doom of the
+“sad-eyed race of mortal men” is the
+theme of pathos throughout antiquity.
+Their souls rebelled against the bitterness
+of death, and the search for the
+elixir of life (to renew man’s youth and
+to give him immortality) has been
+“the inspiration of most of the world’s
+great literature in every age and clime,
+and not only of our literature but of
+all our civilization.”</p>
+
+<p>They worshipped life, and feared
+and hated death. And so they
+worshipped women, and the womb
+from which they all sprang. For good
+luck they carried amulets, shells especially;
+and from being amulets these
+shells came to be worshipped as the
+actual source of life, were personified<span class="pagenum"><a id="Page_66"></a>[66]</span>
+and made symbols again of the Great
+Mother, the giver of life. (So Aphrodite,
+the goddess of love, came floating
+in a shell on the foam of the sea to gladden
+the hearts of men). They noticed,
+too, that water was the first necessity
+of men and beasts and plants, and that
+dead men and things stiffened and
+withered as though the water was gone
+out of them; and so they worshipped
+water as the principle of life, and the
+water-god was the second-born. Then,
+turning their vision further a-field, they
+took note of the regular motions of the
+moon, her monthly course, and her
+strange connection with the tides of
+the sea; and so the Great Mother
+became identified with the Moon. And
+then as they pondered they felt the
+greater glory of the Sun, and set him
+up above his mother the Moon; but the
+moon long remained the personification
+of order and light and goodness, set<span class="pagenum"><a id="Page_67"></a>[67]</span>
+over against chaos and darkness and
+evil—though in time it was the sun, or
+his successor-sun, who came to be
+regarded as the prince of light.</p>
+
+<p>They hated death, and in the
+presence of it protested their belief
+that somehow, somewhere, the dead
+continued to live, needing all the gifts
+his family could bring—a primitive
+doctrine of immortality. And then,
+in the presence of corruption, they
+made plans to preserve the body: they
+burnt incense to restore the odour of
+life; they poured libations to replace
+the vital juices. They tried to infuse
+blood, the life-giver (for “blood,” as
+we say still, “is thicker than water”) or
+to find some painted substitute. They
+hung the tomb with magic shells, that
+the dead might be born again. And
+when, after all, the body still decayed,
+they made statues instead for the soul
+to inhabit, and tried their charms on<span class="pagenum"><a id="Page_68"></a>[68]</span>
+them; and from the idea that statues
+can come to life grows the contrary
+idea that men can be turned to stone.
+The crowning triumph of their statuary
+was the eye, making the statue (as we
+say) “a living image”; and from the
+idea that the open eye means life, came
+the belief in the power of the eye for
+good or evil. To this day the neglect
+of the poorest grave is regarded as a
+more than callous crime, and there are
+not wanting those amongst us who
+shudder at the desecration of the age-old
+tombs of Egyptian kings.</p>
+
+<p>Thus it was in the beginning. And
+when in process of time a wise king
+discovered the arts of irrigation (it may
+be that this discovery made him king;
+or perhaps kingship originated with the
+discovery of the calendar, which conferred
+the gift of prophecy: “king”
+here is in any case premature), and
+spread fertility throughout the land,<span class="pagenum"><a id="Page_69"></a>[69]</span>
+they worshipped him too and made
+him a living god, and cherished him as
+the soul (as it were) of their land’s
+fertility. And when he grew old, and
+his powers began to wane, terror fell on
+them lest their fortunes should fail
+with him and they be all dead men.
+So they transferred their worship for
+the king to his office, killed him, and
+made his son divine. And when he too
+began to age, they killed him in turn,
+and his sons after him, so that they
+always had a young and vigorous
+king-god. Until in time an ageing king
+refused to submit, and this was the
+origin of the story of the wrath of the
+gods and the destruction of mankind.
+Time passed, and the monarch was
+replaced by a maiden among his
+subjects, and we are at the stage of
+ordinary human sacrifice, “human blood
+being thought of as the only elixir.”
+But in time that, too, was ended, by<span class="pagenum"><a id="Page_70"></a>[70]</span>
+a kind of religious reformation, through
+the belief that any other blood would
+do as well; and this was the origin of
+the story of the rescued maiden and her
+deliverer.</p>
+
+<p>They worshipped water, and they
+worshipped shells, and so the pearl
+within the oyster-shell; and diving
+for pearls, their natural enemy was the
+shark, the guardian of the treasure and
+the only true and original dragon. But
+in the course of ages all this was
+naturally forgotten, and the dragon
+came to be adorned with all the terrors
+of all the monsters of travellers’ tales,
+from the python to the octopus and the
+lion that lives in the waste. Any
+terrible or impressive fact of life or
+nature—the existence of evil, or of
+hoary mountains—gave rise to a fresh
+dragon-tale; and the fact was then
+brought in as evidence of the truth of
+the tale, very much as a politician<span class="pagenum"><a id="Page_71"></a>[71]</span>
+to-day will convince men of his general
+veracity and wisdom by stating some
+obvious truth; and in the absence of
+facts, the vague terrors of untutored
+minds became embodied in similar
+monsters; and so in a sense they are
+still, though nowadays we call the
+result a “complex.”</p>
+
+<hr class="chap x-ebookmaker-drop">
+
+<div class="chapter">
+<p><span class="pagenum"><a id="Page_72"></a>[72]</span></p>
+
+<h2 class="nobreak" id="EPILOGUE">EPILOGUE</h2>
+</div>
+
+
+<p>I would not wish man rid of the
+dragon as death; partly, no doubt,
+because I know it to be impossible
+(“This business of death is a plain
+case and admits no controversy”);
+partly because death is such a satisfactory
+thing: it is always something
+to look forward to. Death is perhaps
+the oldest of the dragons, long since
+domesticated and become the friend
+of man through familiarity.</p>
+
+<p>But there remains that dragon of
+which we spoke in the beginning,
+compounded of respectability and
+bigotry and cant; or rather these
+things are the evidence that the dragon
+still exists, for they are all the effects<span class="pagenum"><a id="Page_73"></a>[73]</span>
+of terror: terror of truth and knowledge
+and hard fact, the old terror of
+man “a stranger and afraid, in a world
+he never made.” This monster dwells
+not in the desert places of the earth,
+but in the hearth and home of every
+man. Its appetite is enormous and its
+destructive powers are equalled only
+by its fertility. Like all the other
+dragons, it is begotten by dogma out of
+ignorance.</p>
+
+<p>It would be a mistake to suppose
+(as some have done) that religion is
+altogether a bad thing because it has
+fostered many errors, or altogether a
+fraud because it is profitable to priests.
+Every science under the sun has
+fostered innumerable errors, and every
+doctor on earth practises pious frauds
+daily, seldom solely for his private ends.
+Mankind as a whole has had a hand in
+these imaginings for half-a-hundred
+centuries; our certain knowledge of<span class="pagenum"><a id="Page_74"></a>[74]</span>
+our surroundings is to this day
+infinitesimal; and “it is part of our
+human make-up to bridge the gaps in
+our experience with rumours, with
+conjectures, and with soothing traditions.”</p>
+
+<p>Not many months ago there came to
+these shores a Chinese game, Mah
+Jongg, so perfected in the course of centuries
+that not even a Chinaman can
+cheat at it. Is it too much to hope that,
+with the general increase of knowledge
+and the general recognition of the limits
+to which our knowledge can attain, this
+old world may yet produce some saint
+or hero who will finally rescue
+Andromeda from the dragon?</p>
+
+
+
+
+<hr class="chap">
+<div class="tnote">
+<p class="noi tntitle">Transcriber’s Notes:</p>
+
+<p class="smfont">Printer’s, punctuation, and spelling inaccuracies were silently
+   corrected.</p>
+
+<p class="smfont">Archaic and variable spelling has been preserved.</p>
+</div>
+
+</body>
+</html>
+
